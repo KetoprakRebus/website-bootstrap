@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - SMA Negeri 1 Metro</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<style>
+
+body{
+height:100vh;
+background:linear-gradient(135deg,#0d6efd,#4e73df);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.login-card{
+width:380px;
+border:none;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+text-align:center;
+margin-bottom:20px;
+}
+
+.form-control{
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card login-card p-4">
+
+<div class="logo">
+Portal SMA Negeri 1 Metro
+</div>
+
+<h4 class="text-center mb-4">Login</h4>
+
+<form id="loginForm">
+
+<div class="mb-3">
+<label class="form-label">Username</label>
+<input type="text" class="form-control" id="username" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Password</label>
+<input type="password" class="form-control" id="password" required>
+</div>
+
+<div class="d-grid">
+<button class="btn btn-primary btn-lg">
+Login
+</button>
+</div>
+
+</form>
+
+<div id="loginAlert" class="alert alert-danger mt-3 d-none">
+Username atau Password salah
+</div>
+
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let user = document.getElementById("username").value;
+let pass = document.getElementById("password").value;
+
+if(user === "admin" && pass === "123"){
+alert("Login berhasil!");
+window.location.href="index.html";
+}else{
+document.getElementById("loginAlert").classList.remove("d-none");
+}
+
+});
+
+</script>
+
+</body>
+</html>
