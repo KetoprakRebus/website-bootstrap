@@ -4,332 +4,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Profil Sekolah - SMA Negeri 1 Metro</title>
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- STYLE -->
     <style>
 
         /* =========================
            GLOBAL
         ========================= */
-        body{
-            background:#f4f6fb;
-            font-family:Arial, Helvetica, sans-serif;
+
+        body {
+            background: #f5f7fb;
+            /* Menerapkan Poppins ke seluruh halaman */
+            font-family: 'Poppins', sans-serif; 
         }
 
-        /* =========================
-           HERO
-        ========================= */
-        .hero{
-            background:linear-gradient(135deg,#0d6efd,#4e73df);
-            color:white;
-            padding:30px 20px;
-            text-align:center;
+        .hero {
+            background: linear-gradient(135deg, #0d6efd, #4e73df);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-        /* =========================
-           CARD
-        ========================= */
-        .info-card{
-            border:none;
-            border-radius:15px;
-            box-shadow:0 6px 20px rgba(0,0,0,0.1);
-            transition:0.3s;
+        .info-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
         }
 
-        .info-card:hover{
-            transform:translateY(-5px);
+        .info-card:hover {
+            transform: translateY(-5px);
         }
 
-        /* =========================
-           TITLE
-        ========================= */
-        .section-title{
-            text-align:center;
-            margin-bottom:30px;
-            font-weight:bold;
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .img-tentang {
+            height: 300px;
+            width: 80%;
+            object-fit: cover;
+        }
+
+        .justify-text {
+            text-align: justify;
         }
 
     </style>
-
 </head>
-
-
 
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================= -->
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
         <div class="container">
 
-            <a class="navbar-brand fw-bold">
-                SMA N 1 Metro
-            </a>
+            <a class="navbar-brand fw-bold">SMA N 1 Metro</a>
 
-            <button class="navbar-toggler"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menu">
-
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
-
             </button>
 
-
             <div class="collapse navbar-collapse" id="menu">
-
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            Beranda
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="profil.html">
-                            Profil
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="struktur.html">
-                            Struktur
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="kritik.html">
-                            Kritik & Saran
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">
-                            Login
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="struktur.html">Struktur</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kritik.html">Kritik & Saran</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
 
                 </ul>
-
             </div>
-
         </div>
-
     </nav>
 
-
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
     <section class="hero">
-
         <div class="container">
-
             <h1>Profil Sekolah</h1>
             <p>SMA Negeri 1 Metro</p>
-
         </div>
-
     </section>
 
-
-
-    <!-- =========================
-         TENTANG SEKOLAH
-    ========================= -->
-
     <section class="container my-5">
-
-        <h2 class="section-title">
-            Tentang Sekolah
-        </h2>
-
-        <div class="row">
-
-            <!-- FOTO -->
-            <div class="col-md-6">
-
-                <img
-                    src="https://yt3.googleusercontent.com/b5qIbR6CAaVkYtHwlTxMjncBU0SCVRQHFRUfkj26vxqj7_9-FGolOyP8DHTIU58zpRb29VMiuMg=s900-c-k-c0x00ffffff-no-rj"
-                    class="img-fluid rounded shadow">
-
+        <h2 class="section-title">Tentang Sekolah</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNVVJJs9gjdeCW1HYVLbamsY8SuhufY1Ot-RjfA=s1134-k-no"
+                     class="img-fluid rounded shadow img-tentang">
             </div>
-
-
-            <!-- TEKS -->
             <div class="col-md-6">
-
-                <p>
-                    SMA Negeri 1 Metro merupakan salah satu sekolah menengah
-                    atas unggulan di Kota Metro yang berkomitmen untuk
-                    menciptakan generasi yang unggul dalam bidang akademik,
-                    karakter, dan keterampilan.
+                <p class="justify-text">
+                    SMA Negeri 1 Metro merupakan sekolah unggulan yang berkomitmen
+                    mencetak generasi berprestasi dalam bidang akademik, karakter,
+                    dan keterampilan.
                 </p>
-
-                <p>
-                    Sekolah ini menyediakan berbagai fasilitas pendidikan
-                    yang modern serta didukung oleh tenaga pengajar yang
-                    profesional dan berpengalaman.
+                <p class="justify-text">
+                    Berlokasi di Jl. Jend. AH. Nasution, Yosodadi, Kota Metro,
+                    SMA Negeri 1 Metro memiliki lingkungan belajar yang strategis
+                    dan mendukung proses pendidikan yang kondusif.
                 </p>
-
-                <p>
-                    Selain kegiatan akademik, SMA Negeri 1 Metro juga aktif
-                    dalam berbagai kegiatan ekstrakurikuler yang bertujuan
-                    untuk mengembangkan bakat dan minat siswa.
+                <p class="justify-text">
+                    SMA Negeri 1 Metro dikenal dengan berbagai prestasi di tingkat
+                    daerah hingga nasional, serta komitmen dalam mengembangkan
+                    kemampuan akademik, karakter, dan keterampilan siswa.
                 </p>
-
+                <p class="justify-text">
+                    Dengan visi “Disiplin, Unggul, Dilandasi Iman dan Taqwa (Digul Imtaq)”,
+                    sekolah ini terus berupaya mencetak generasi yang berprestasi,
+                    berakhlak mulia, dan siap menghadapi tantangan masa depan.
+                </p>
             </div>
-
         </div>
-
     </section>
 
-
-
-    <!-- =========================
-         VISI MISI
-    ========================= -->
+    <section class="container my-5">
+        <h2 class="section-title">Sejarah Sekolah</h2>
+        <div class="card info-card p-4">
+            <p class="justify-text">
+                SMA Negeri 1 Metro berdiri pada tahun 1959 atas prakarsa masyarakat Metro dan Pemerintah Daerah Kabupaten Lampung tengah di bawah perlindungan Syahri Djajawijaya. Pada awal berdirinya, sekolah ini bernama SPTA (Sekolah Perisapan Tingkat Atas) dengan jumlah siswa 35 orang. Gedung utama sekolah dibangun pada tahun 1962 hasil dari gotong royong masyarakat di atas tanah seluas 19.965 M2.
+            </p>
+            <p class="justify-text">
+                Sebagai sekolah tertua di wilayahnya, SMA N 1 Metro telah berganti nama lebih dari satu kali.
+                <ul>
+                    <li>
+                        Awalnya bernama SPTA (Sekolah Persiapan Tingkat Atas)
+                        SMA Negeri Metro.
+                    </li>
+                    <li>
+                        Ditetapkan berdasarkan SK Kepala Jakarta Pusat Bagian Kursus
+                        Nomor: 27/SK/B-III/1959 tanggal 11 Juni 1959.
+                    </li>
+                    <li>
+                        Seiring pembangunan SMA lain di wilayah Metro, nama sekolah
+                        berubah menjadi SMA Negeri 1 Metro hingga saat ini.
+                    </li>
+                </ul>
+            </p>
+            <p class="justify-text">
+                Seiring perkembangan, nama sekolah mengalami beberapa perubahan,
+                mulai dari SMA Negeri Metro hingga akhirnya menjadi
+                SMA Negeri 1 Metro seperti yang dikenal saat ini.
+            </p>
+            <p class="justify-text">
+                Sebagai sekolah tertua di Kota Metro, SMA Negeri 1 Metro
+                terus berkembang dan dikenal sebagai sekolah unggulan
+                dengan berbagai prestasi di tingkat daerah maupun nasional.
+            </p>
+        </div>
+    </section>
 
     <section class="container my-5">
-
-        <h2 class="section-title">
-            Visi dan Misi
-        </h2>
-
+        <h2 class="section-title">Visi dan Misi</h2>
         <div class="row g-4">
 
-            <!-- VISI -->
             <div class="col-md-6">
-
-                <div class="card info-card p-4">
-
+                <div class="card info-card p-4 h-100 text-center">
                     <h4>Visi</h4>
-
-                    <p>
-                        Disiplin, Unggul, Dilandasi Iman dan Taqwa
-                        (Digul Imtaq)
-                    </p>
-
+                    <p>Disiplin, Unggul, Dilandasi Iman dan Taqwa</p>
                 </div>
-
             </div>
 
-
-            <!-- MISI -->
             <div class="col-md-6">
-
-                <div class="card info-card p-4">
-
-                    <h4>Misi</h4>
-
+                <div class="card info-card p-4 h-100">
+                    <h4 class="text-center">Misi</h4>
                     <ul>
-
-                        <li>
-                            Mengembangkan kedisiplinan, kepemimpinan,
-                            dan kepribadian dalam kerangka ketaqwaan
-                            kepada Tuhan Yang Maha Esa.
-                        </li>
-
-                        <li>
-                            Mengembangkan kompetensi akademik maupun
-                            non-akademik yang berkualitas mengarah
-                            pada standar nasional dan internasional.
-                        </li>
-
-                        <li>
-                            Mengembangkan proses pembelajaran yang
-                            bermutu, efektif dan dinamis dengan
-                            memanfaatkan sumber belajar inovatif.
-                        </li>
-
-                        <li>
-                            Mengembangkan sikap kompetitif yang
-                            sportif melalui berbagai bidang.
-                        </li>
-
+                        <li>Mengembangkan karakter dan kedisiplinan siswa</li>
+                        <li>Meningkatkan kualitas akademik</li>
+                        <li>Mengembangkan pembelajaran inovatif</li>
+                        <li>Meningkatkan daya saing siswa</li>
                     </ul>
-
                 </div>
-
             </div>
 
         </div>
-
     </section>
 
-
-
-    <!-- =========================
-         FASILITAS SEKOLAH
-    ========================= -->
-
     <section class="container my-5">
-
-        <h2 class="section-title">
-            Fasilitas Sekolah
-        </h2>
-
+        <h2 class="section-title">Identitas Sekolah</h2>
         <div class="row g-4">
 
-            <!-- FASILITAS 1 -->
+            <div class="col-md-12">
+                <div class="card info-card p-4 text-center">
+                    <h5>Akreditasi</h5>
+                <p class="mb-3"><b>A (Unggul)</b></p>
+
+                <h5>NPSN</h5>
+                <p><b>10807561</b></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="section-title">Fasilitas Sekolah</h2>
+        <div class="row g-4">
+
             <div class="col-md-4">
                 <div class="card info-card">
-                    <img src="https://picsum.photos/400/250?1" class="card-img-top">
+                    <img src="https://www.smansa-metro.sch.id/images/lab_multimedia.jpg" class="card-img-top">
                     <div class="card-body text-center">
-                        <h5>Laboratorium Komputer</h5>
-                        <p>Fasilitas komputer untuk pembelajaran teknologi.</p>
+                        <h5>Lab Komputer</h5>
+                        <p>Fasilitas teknologi modern.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- FASILITAS 2 -->
             <div class="col-md-4">
                 <div class="card info-card">
-                    <img src="https://picsum.photos/400/250?2" class="card-img-top">
+                    <img src="https://www.smansa-metro.sch.id/images/lab_biologi2.jpeg" class="card-img-top">
                     <div class="card-body text-center">
-                        <h5>Laboratorium IPA</h5>
-                        <p>Laboratorium praktikum fisika, kimia, dan biologi.</p>
+                        <h5>Lab IPA</h5>
+                        <p>Praktikum lengkap.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- FASILITAS 3 -->
             <div class="col-md-4">
                 <div class="card info-card">
-                    <img src="https://picsum.photos/400/250?3" class="card-img-top">
+                    <img src="https://www.smansa-metro.sch.id/images/speasyimagegallery/albums/6/images/22290079-1926220567598604-4954462988710483805-o.jpg" class="card-img-top">
                     <div class="card-body text-center">
                         <h5>Perpustakaan</h5>
-                        <p>Menyediakan berbagai buku pelajaran.</p>
+                        <p>Buku lengkap dan nyaman.</p>
                     </div>
                 </div>
             </div>
 
         </div>
-
     </section>
 
+    <section class="container my-5">
+        <h2 class="section-title">Lokasi Sekolah</h2>
+        <div class="card info-card p-4 text-center">
 
+            <p>JL. AH. NASUTION NO. 222, Yosodadi, Metro Timur, Kota Metro, Lampung</p>
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.9717756170307!2d105.32771357428436!3d-5.108250751746313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40bc113fab1267%3A0xf54ac451ef4261e3!2sSMA%20Negeri%201%20Metro!5e0!3m2!1sen!2sid!4v1773903033075!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </iframe>
+
+        </div>
+    </section>
 
     <footer class="bg-dark text-white text-center p-3">
-
         <p>© 2026 Portal SMA Negeri 1 Metro</p>
-
     </footer>
-
 
     <script src="js/bootstrap.bundle.min.js"></script>
 

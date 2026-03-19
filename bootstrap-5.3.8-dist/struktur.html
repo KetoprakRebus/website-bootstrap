@@ -5,385 +5,607 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Struktur Organisasi - SMA Negeri 1 Metro</title>
+    <title>Struktur Organisasi Sekolah - SMA Negeri 1 Metro</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-
+        
         /* ================= GLOBAL ================= */
-
-        body{
-            background:#f5f7fb;
-            font-family:Arial, Helvetica, sans-serif;
+        body {
+            background: #f5f7fb;
+            font-family: 'Poppins', sans-serif; 
         }
 
         /* ================= HEADER ================= */
-
-        .header{
-            background:linear-gradient(135deg,#0d6efd,#4e73df);
-            color:white;
-            padding:30px 0;
-            text-align:center;
+        .header {
+            background: linear-gradient(135deg, #0d6efd, #4e73df);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+        }
+        
+        .header h1 {
+            font-weight: 700; 
+            margin-bottom: 5px;
         }
 
-        /* ================= CARD ORGANISASI ================= */
-
-        .org-card{
-            border:none;
-            border-radius:15px;
-            transition:0.3s;
-            height:100%;
+        .header p {
+            font-weight: 400;
         }
 
-        .org-card:hover{
-            transform:translateY(-8px);
+        /* ================= ORG CHART CSS ================= */
+        :root {
+            --primary-blue: #0d6efd;
+            --secondary-blue: #4e73df;
+            --text-dark: #2b2b2b;
+            --line-color: #a0aec0; 
+            --card-bg: #ffffff;
         }
 
-        .org-img{
-            width:110px;
-            height:110px;
-            border-radius:50%;
-            object-fit:cover;
-            margin:auto;
-            margin-top:20px;
-            border:4px solid white;
-            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        .org-chart-container {
+            color: var(--text-dark);
+            padding: 50px 0 100px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: auto; /* Memastikan tidak jebol di mobile */
         }
 
-        .section-title{
-            margin-top:40px;
-            margin-bottom:30px;
-            font-weight:bold;
-            text-align:center;
+        /* Profil Pimpinan (Level Atas) */
+        .node-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
+
+        .role-badge {
+            background-color: var(--primary-blue);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 5px 25px;
+            border-radius: 20px;
+            position: absolute;
+            top: -15px;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .name-plate {
+            background-color: var(--card-bg);
+            padding: 15px 30px 15px 65px; 
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-width: 240px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .name-plate:hover {
+            transform: scale(1.05) rotate(-1deg);
+            border-color: var(--primary-blue);
+        }
+
+        .name-plate .name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .avatar {
+            position: absolute;
+            left: -20px;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-blue);
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            background-color: white;
+        }
+
+        /* ================= GARIS PENGHUBUNG ================= */
+        .main-trunk {
+            width: 2px;
+            height: 40px;
+            background-color: var(--line-color);
+        }
+
+        .level-2-container {
+            display: flex;
+            justify-content: center;
+            gap: 120px;
+            position: relative;
+            padding-top: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .level-2-container::before {
+            content: ""; position: absolute; top: 0; left: 25%; right: 25%; height: 2px; background-color: var(--line-color);
+        }
+        .level-2-node { position: relative; }
+        .level-2-node::before {
+            content: ""; position: absolute; top: -30px; left: 50%; width: 2px; height: 30px; background-color: var(--line-color);
+        }
+
+        .middle-trunk {
+            width: 2px;
+            height: 60px;
+            background-color: var(--line-color);
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* ================= KOLOM DEPARTEMEN ================= */
+        .columns-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            position: relative;
+            padding-top: 30px;
+            margin-top: 30px;
+            width: 100%;
+            min-width: 1000px; /* Menjaga agar tidak jebol saat di-scroll horizontal */
+        }
+
+        .columns-container::before {
+            content: ""; position: absolute; top: 0; left: 12%; right: 12%; height: 2px; background-color: var(--line-color);
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            flex: 1; 
+        }
+        .column::before {
+            content: ""; position: absolute; top: -30px; left: 50%; width: 2px; height: 30px; background-color: var(--line-color);
+        }
+
+        .col-header {
+            background-color: var(--secondary-blue);
+            color: white;
+            padding: 8px 30px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(78, 115, 223, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        /* List Staf / Guru */
+        .list-item {
+            background-color: var(--card-bg);
+            width: 100%;
+            border-radius: 30px;
+            padding: 10px 15px 10px 75px; 
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 4px solid var(--primary-blue);
+        }
+        .list-item:hover { 
+            transform: translateX(5px) translateY(-3px); 
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .list-avatar {
+            position: absolute;
+            left: 10px; 
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .list-name { font-weight: 600; font-size: 0.95rem; color: var(--text-dark); white-space: nowrap; }
+        .list-role { font-size: 0.8rem; color: #718096; font-weight: 500; white-space: nowrap; }
+
+        /* ================= DIREKTORI GURU & SEARCH BAR ================= */
+        
+        /* Pembungkus Full Width untuk Background Biru */
+        .directory-wrapper {
+            background: linear-gradient(135deg, #0d6efd, #4e73df);
+            padding: 70px 0 90px 0; /* Memberi ruang luas di atas dan bawah */
+            margin-top: 30px;
+            border-top-left-radius: 40px; /* Sedikit lengkungan di atas agar lebih manis */
+            border-top-right-radius: 40px;
+        }
+
+        .directory-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .directory-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .directory-header h3 {
+            font-weight: 700;
+            color: white; /* Teks diubah putih karena background biru */
+            margin-bottom: 10px;
+        }
+        
+        .directory-header p {
+            color: rgba(255, 255, 255, 0.85); /* Putih agak transparan */
+            font-size: 0.95rem;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Bayangan lebih tebal di atas biru */
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            transform: translateY(-2px); /* Efek melayang saat diklik */
+        }
+
+        /* Grid Kartu Guru */
+        .teacher-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Bayangan disesuaikan */
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+
+        .t-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f5f7fb;
+        }
+
+        .t-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .t-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .t-subject {
+            font-size: 0.8rem;
+            color: var(--primary-blue); /* Aksen warna biru di mata pelajaran */
+            font-weight: 600;
+            margin: 0;
+        }
+        
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 992px) {
+            .columns-container { flex-wrap: wrap; min-width: unset; }
+            .column { flex: 0 0 45%; margin-bottom: 40px; }
+            .columns-container::before { left: 25%; right: 25%; }
+            .level-2-container { gap: 40px; }
+            .name-plate { min-width: 200px; }
+        }
+
+        @media (max-width: 768px) {
+            .level-2-container { flex-direction: column; gap: 40px; padding-top: 0; align-items: center; }
+            .level-2-container::before, .columns-container::before, .middle-trunk, .level-2-node::before, .column::before { display: none; }
+            .main-trunk { height: 20px; }
+            .column { flex: 0 0 100%; width: 100%; }
+
+            /* Fix Pimpinan Card di HP */
+            .name-plate {
+                padding: 15px 20px 15px 85px; 
+                width: 95%; 
+                margin: 0 auto;
+            }
+            .avatar {
+                left: 10px; 
+                width: 65px; 
+                height: 65px;
+            }
+        }
+
+        /* Nav & Footer overrides */
+        .navbar-brand { font-weight: 700 !important; }
+        .nav-link { font-weight: 500; }
+        footer p { font-weight: 400; font-size: 0.9rem; margin: 0; }
 
     </style>
-
 </head>
-
-
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
         <div class="container">
-
-            <a class="navbar-brand fw-bold">
-                SMA N 1 Metro
-            </a>
-
-            <ul class="navbar-nav ms-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        Beranda
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="profil.html">
-                        Profil
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="struktur.html">
-                        Struktur
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="kritik.html">
-                        Kritik & Saran
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">
-                        Login
-                    </a>
-                </li>
-
-            </ul>
-
+            <a class="navbar-brand fw-bold">SMA N 1 Metro</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="struktur.html">Struktur</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kritik.html">Kritik & Saran</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
         </div>
-
     </nav>
 
-
-
-    <!-- ================= HEADER ================= -->
-
     <section class="header">
-
-        <h1>Struktur Organisasi</h1>
+        <h1>Struktur Organisasi Sekolah</h1>
         <p>SMA Negeri 1 Metro</p>
-
     </section>
 
+    <div class="container-fluid px-5 org-chart-container">
+        
+        <div class="node-wrapper">
+            <div class="role-badge">Kepala Sekolah</div>
+            <div class="name-plate">
+                <img src="https://www.smansa-metro.sch.id/images/guru/M.jpg" alt="M. Kholid" class="avatar">
+                <span class="name">M. Kholid, M.Pd</span>
+            </div>
+        </div>
 
+        <div class="main-trunk"></div>
 
-    <div class="container">
-
-        <!-- ================= PIMPINAN ================= -->
-
-        <h3 class="section-title">Pimpinan Sekolah</h3>
-
-        <div class="row justify-content-center g-4">
-
-            <!-- Kepala Sekolah -->
-            <div class="col-md-4">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/200" class="org-img">
-
-                    <div class="card-body">
-                        <h5>M. Kholid, M.Pd</h5>
-                        <p>Kepala Sekolah</p>
-                    </div>
-
+        <div class="level-2-container">
+            <div class="middle-trunk"></div> 
+            
+            <div class="node-wrapper level-2-node">
+                <div class="role-badge" style="background-color: #f6ad55;">Komite Sekolah</div> 
+                <div class="name-plate">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/bejansantoso.JPG" alt="Drs. Rusnadi" class="avatar" style="border-color: #f6ad55;">
+                    <span class="name">Drs. Rusnadi, M.Si</span>
                 </div>
             </div>
 
-            <!-- Komite Sekolah -->
-            <div class="col-md-4">
-                <div class="card shadow org-card text-center">
+            <div class="node-wrapper level-2-node">
+                <div class="role-badge" style="background-color: #f6ad55;">Kepala Tata Usaha</div>
+                <div class="name-plate">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/supono.JPG" alt="Supono" class="avatar" style="border-color: #f6ad55;">
+                    <span class="name">Supono</span>
+                </div>
+            </div>
+        </div>
 
-                    <img src="https://picsum.photos/201" class="org-img">
-
-                    <div class="card-body">
-                        <h5>Drs. Rusnadi, M.Si</h5>
-                        <p>Komite Sekolah</p>
-                    </div>
-
+        <div class="columns-container">
+            
+            <div class="column">
+                <div class="col-header">Kurikulum</div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/nurul.jpg" alt="Tri Nurul" class="list-avatar">
+                    <span class="list-name">Tri Nurul F., S.Kom</span>
+                    <span class="list-role">Waka Kurikulum</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/tinamar.jpg" alt="Tina Maryanti" class="list-avatar">
+                    <span class="list-name">Tina Maryanti, S.IP</span>
+                    <span class="list-role">Bid. Perpustakaan</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/2023/IHTjuli/WhatsApp_Image_2023-07-23_at_82626_AM.jpeg" alt="Guru" class="list-avatar">
+                    <span class="list-name">Bapak/Ibu Guru</span>
+                    <span class="list-role">Guru Mata Pelajaran</span>
                 </div>
             </div>
 
-            <!-- Tata Usaha -->
-            <div class="col-md-4">
-                <div class="card shadow org-card text-center">
+            <div class="column">
+                <div class="col-header">Kesiswaan</div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/bahrudin_sarief.JPG" alt="Bahrudin" class="list-avatar">
+                    <span class="list-name">Bahrudin S., S.Pd</span>
+                    <span class="list-role">Waka Kesiswaan</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/yohana%20amd.JPG" alt="Yohanah" class="list-avatar">
+                    <span class="list-name">Yohanah</span>
+                    <span class="list-role">Bid. Kesiswaan</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/2023/IHTjuli/WhatsApp_Image_2023-07-23_at_82620_AM.jpeg" alt="Pembimbing" class="list-avatar">
+                    <span class="list-name">Bapak/Ibu Guru</span>
+                    <span class="list-role">Pembimbing Akademik</span>
+                </div>
+            </div>
 
-                    <img src="https://picsum.photos/202" class="org-img">
+            <div class="column">
+                <div class="col-header">Sarpras & Lab</div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/LAKON_.jpg" alt="Lakon Wahono" class="list-avatar">
+                    <span class="list-name">Lakon W., S.Pd</span>
+                    <span class="list-role">Waka Sarpras</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/Nova.jpg" alt="Nanda" class="list-avatar">
+                    <span class="list-name">Nanda Fitria S.</span>
+                    <span class="list-role">Pranata Laboran</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://picsum.photos/213" alt="Guru Pembimbing" class="list-avatar">
+                    <span class="list-name">Bapak/Ibu Guru</span>
+                    <span class="list-role">Guru Pembimbing</span>
+                </div>
+            </div>
 
-                    <div class="card-body">
-                        <h5>Supono</h5>
-                        <p>Kepala Tata Usaha</p>
-                    </div>
-
+            <div class="column">
+                <div class="col-header">Humas & Admin</div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/sriwijayanti_3.jpg" alt="Sri Wijayanti" class="list-avatar">
+                    <span class="list-name">Sri Wijayanti, S.Pd</span>
+                    <span class="list-role">Waka Humas</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://www.smansa-metro.sch.id/images/guru/andriyani.JPG" alt="Andriyani" class="list-avatar">
+                    <span class="list-name">Andriyani</span>
+                    <span class="list-role">Bid. Surat Menyurat</span>
+                </div>
+                <div class="list-item">
+                    <img src="https://picsum.photos/214" alt="Wali Kelas" class="list-avatar">
+                    <span class="list-name">Bapak/Ibu Guru</span>
+                    <span class="list-role">Wali Kelas</span>
                 </div>
             </div>
 
         </div>
-
-
-
-        <!-- ================= WAKIL KEPALA ================= -->
-
-        <h3 class="section-title">Wakil Kepala Sekolah</h3>
-
-        <div class="row g-4">
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/203" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Tri Nurul Fajarotun, S.Kom</h6>
-                        <p>Waka Kurikulum</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/204" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Bahrudin Sarief, S.Pd</h6>
-                        <p>Waka Kesiswaan</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/205" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Lakon Wahono, S.Pd</h6>
-                        <p>Waka Sarpras</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/206" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Sri Wijayanti, S.Pd</h6>
-                        <p>Waka Humas</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-
-        <!-- ================= ADMINISTRASI ================= -->
-
-        <h3 class="section-title">Bidang Administrasi</h3>
-
-        <div class="row g-4">
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/207" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Tina Maryanti, S.IP</h6>
-                        <p>Bid. Perpustakaan</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/208" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Nanda Fitria Safitri</h6>
-                        <p>Pranata Laboran</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/209" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Yohanah</h6>
-                        <p>Bid. Kesiswaan</p>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/210" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Andriyani</h6>
-                        <p>Bid. Surat Menyurat</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-
-        <!-- ================= GURU ================= -->
-
-        <h3 class="section-title">Tenaga Pengajar</h3>
-
-        <div class="row g-4">
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/211" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Guru Mata Pelajaran</h6>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/212" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Guru Pembimbing</h6>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/213" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Pembimbing Akademik</h6>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="col-md-3">
-                <div class="card shadow org-card text-center">
-
-                    <img src="https://picsum.photos/214" class="org-img">
-
-                    <div class="card-body">
-                        <h6>Wali Kelas</h6>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-        <br><br>
-
     </div>
 
+    <div class="directory-wrapper">
+        <div class="directory-section">
+            
+            <div class="directory-header">
+                <h3>Direktori Tenaga Pendidik</h3>
+                <p>Cari nama guru atau mata pelajaran yang diampu</p>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Ketik nama atau mata pelajaran...">
+                </div>
+            </div>
 
+            <div class="teacher-list-scroll">
+                <div class="row g-3" id="teacherList">
+                    
+                    <div class="col-md-4 col-sm-6 teacher-item">
+                        <div class="teacher-card">
+                            <img src="https://picsum.photos/101" class="t-avatar">
+                            <div class="t-info">
+                                <p class="t-name">Ahmad Fauzi, S.Pd</p>
+                                <p class="t-subject">Matematika</p>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- ================= FOOTER ================= -->
+                    <div class="col-md-4 col-sm-6 teacher-item">
+                        <div class="teacher-card">
+                            <img src="https://picsum.photos/102" class="t-avatar">
+                            <div class="t-info">
+                                <p class="t-name">Siti Aminah, M.Pd</p>
+                                <p class="t-subject">Bahasa Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 teacher-item">
+                        <div class="teacher-card">
+                            <img src="https://picsum.photos/103" class="t-avatar">
+                            <div class="t-info">
+                                <p class="t-name">Rizky Aditya, S.Kom</p>
+                                <p class="t-subject">TIK / Informatika</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 teacher-item">
+                        <div class="teacher-card">
+                            <img src="https://picsum.photos/104" class="t-avatar">
+                            <div class="t-info">
+                                <p class="t-name">Dina Mariana, S.Pd</p>
+                                <p class="t-subject">Biologi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 teacher-item">
+                        <div class="teacher-card">
+                            <img src="https://picsum.photos/105" class="t-avatar">
+                            <div class="t-info">
+                                <p class="t-name">Budi Santoso, S.Or</p>
+                                <p class="t-subject">Penjaskes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 teacher-item">
+                        <div class="teacher-card">
+                            <img src="https://picsum.photos/106" class="t-avatar">
+                            <div class="t-info">
+                                <p class="t-name">Lestari Ningsih, S.Pd</p>
+                                <p class="t-subject">Sejarah</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+            </div>
+            </div>
+    </div>
 
     <footer class="bg-dark text-white text-center p-3">
         <p>© 2026 Portal SMA Negeri 1 Metro</p>
     </footer>
 
-
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let searchQuery = this.value.toLowerCase();
+            let teacherItems = document.querySelectorAll('.teacher-item');
+            
+            teacherItems.forEach(function(item) {
+                let textContent = item.textContent.toLowerCase();
+                
+                if(textContent.includes(searchQuery)) {
+                    item.style.display = 'block'; 
+                } else {
+                    item.style.display = 'none'; 
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
