@@ -1,319 +1,337 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Profil Sekolah - SMA Negeri 1 Metro</title>
+    <title>Profil Sekolah - SMA Negeri 1 Metro</title>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<style>
+    <!-- STYLE -->
+    <style>
 
-body{
-background:#f4f6fb;
-font-family:Arial, Helvetica, sans-serif;
-}
+        /* =========================
+           GLOBAL
+        ========================= */
+        body{
+            background:#f4f6fb;
+            font-family:Arial, Helvetica, sans-serif;
+        }
 
-/* HERO */
+        /* =========================
+           HERO
+        ========================= */
+        .hero{
+            background:linear-gradient(135deg,#0d6efd,#4e73df);
+            color:white;
+            padding:30px 20px;
+            text-align:center;
+        }
 
-.hero{
-background:linear-gradient(135deg,#0d6efd,#4e73df);
-color:white;
-padding:30px 20px;
-text-align:center;
-}
+        /* =========================
+           CARD
+        ========================= */
+        .info-card{
+            border:none;
+            border-radius:15px;
+            box-shadow:0 6px 20px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
 
-/* CARD */
+        .info-card:hover{
+            transform:translateY(-5px);
+        }
 
-.info-card{
-border:none;
-border-radius:15px;
-box-shadow:0 6px 20px rgba(0,0,0,0.1);
-transition:0.3s;
-}
+        /* =========================
+           TITLE
+        ========================= */
+        .section-title{
+            text-align:center;
+            margin-bottom:30px;
+            font-weight:bold;
+        }
 
-.info-card:hover{
-transform:translateY(-5px);
-}
-
-.section-title{
-text-align:center;
-margin-bottom:30px;
-font-weight:bold;
-}
-
-</style>
+    </style>
 
 </head>
 
+
+
 <body>
 
-<!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-<div class="container">
+        <div class="container">
 
-<a class="navbar-brand fw-bold">SMA N 1 Metro</a>
+            <a class="navbar-brand fw-bold">
+                SMA N 1 Metro
+            </a>
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
+            <button class="navbar-toggler"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu">
 
-<div class="collapse navbar-collapse" id="menu">
+                <span class="navbar-toggler-icon"></span>
 
-<ul class="navbar-nav ms-auto">
+            </button>
 
-<li class="nav-item">
-<a class="nav-link" href="index.html">Beranda</a>
-</li>
 
-<li class="nav-item">
-<a class="nav-link active" href="profil.html">Profil</a>
-</li>
+            <div class="collapse navbar-collapse" id="menu">
 
-<li class="nav-item">
-<a class="nav-link" href="struktur.html">Struktur</a>
-</li>
+                <ul class="navbar-nav ms-auto">
 
-<li class="nav-item">
-<a class="nav-link" href="kritik.html">Kritik & Saran</a>
-</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Beranda
+                        </a>
+                    </li>
 
-<li class="nav-item">
-<a class="nav-link" href="login.html">Login</a>
-</li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profil.html">
+                            Profil
+                        </a>
+                    </li>
 
-</ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="struktur.html">
+                            Struktur
+                        </a>
+                    </li>
 
-</div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kritik.html">
+                            Kritik & Saran
+                        </a>
+                    </li>
 
-</div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            Login
+                        </a>
+                    </li>
 
-</nav>
+                </ul>
 
+            </div>
 
-<!-- HERO -->
+        </div>
 
-<section class="hero">
+    </nav>
 
-<div class="container">
 
-<h1>Profil Sekolah</h1>
-<p>SMA Negeri 1 Metro</p>
 
-</div>
+    <!-- =========================
+         HERO
+    ========================= -->
 
-</section>
+    <section class="hero">
 
+        <div class="container">
 
-<!-- TENTANG SEKOLAH -->
+            <h1>Profil Sekolah</h1>
+            <p>SMA Negeri 1 Metro</p>
 
-<section class="container my-5">
+        </div>
 
-<h2 class="section-title">Tentang Sekolah</h2>
+    </section>
 
-<div class="row">
 
-<div class="col-md-6">
 
-<img src="https://yt3.googleusercontent.com/b5qIbR6CAaVkYtHwlTxMjncBU0SCVRQHFRUfkj26vxqj7_9-FGolOyP8DHTIU58zpRb29VMiuMg=s900-c-k-c0x00ffffff-no-rj" class="img-fluid rounded shadow">
+    <!-- =========================
+         TENTANG SEKOLAH
+    ========================= -->
 
-</div>
+    <section class="container my-5">
 
-<div class="col-md-6">
+        <h2 class="section-title">
+            Tentang Sekolah
+        </h2>
 
-<p>
-SMA Negeri 1 Metro merupakan salah satu sekolah menengah atas unggulan 
-di Kota Metro yang berkomitmen untuk menciptakan generasi yang unggul 
-dalam bidang akademik, karakter, dan keterampilan.
-</p>
+        <div class="row">
 
-<p>
-Sekolah ini menyediakan berbagai fasilitas pendidikan yang modern serta 
-didukung oleh tenaga pengajar yang profesional dan berpengalaman.
-</p>
+            <!-- FOTO -->
+            <div class="col-md-6">
 
-<p>
-Selain kegiatan akademik, SMA Negeri 1 Metro juga aktif dalam berbagai 
-kegiatan ekstrakurikuler yang bertujuan untuk mengembangkan bakat dan 
-minat siswa.
-</p>
+                <img
+                    src="https://yt3.googleusercontent.com/b5qIbR6CAaVkYtHwlTxMjncBU0SCVRQHFRUfkj26vxqj7_9-FGolOyP8DHTIU58zpRb29VMiuMg=s900-c-k-c0x00ffffff-no-rj"
+                    class="img-fluid rounded shadow">
 
-</div>
+            </div>
 
-</div>
 
-</section>
+            <!-- TEKS -->
+            <div class="col-md-6">
 
+                <p>
+                    SMA Negeri 1 Metro merupakan salah satu sekolah menengah
+                    atas unggulan di Kota Metro yang berkomitmen untuk
+                    menciptakan generasi yang unggul dalam bidang akademik,
+                    karakter, dan keterampilan.
+                </p>
 
-<!-- VISI MISI -->
+                <p>
+                    Sekolah ini menyediakan berbagai fasilitas pendidikan
+                    yang modern serta didukung oleh tenaga pengajar yang
+                    profesional dan berpengalaman.
+                </p>
 
-<section class="container my-5">
+                <p>
+                    Selain kegiatan akademik, SMA Negeri 1 Metro juga aktif
+                    dalam berbagai kegiatan ekstrakurikuler yang bertujuan
+                    untuk mengembangkan bakat dan minat siswa.
+                </p>
 
-<h2 class="section-title">Visi dan Misi</h2>
+            </div>
 
-<div class="row g-4">
+        </div>
 
-<div class="col-md-6">
+    </section>
 
-<div class="card info-card p-4">
 
-<h4>Visi</h4>
 
-<p>
-Disiplin, Unggul, Dilandasi Iman dan Taqwa (Digul Imtaq)
-</p>
+    <!-- =========================
+         VISI MISI
+    ========================= -->
 
-</div>
+    <section class="container my-5">
 
-</div>
+        <h2 class="section-title">
+            Visi dan Misi
+        </h2>
 
-<div class="col-md-6">
-
-<div class="card info-card p-4">
-
-<h4>Misi</h4>
-
-<ul>
-
-<li>Mengembangkan kedisiplinan, kepemimpinan, dan kepribadian dalam kerangka ketaqwaan kepada Tuhan Yang Maha Esa melalui berbagai kegiatan kesiswaan, baik melalui organisasi siswa, kegiatan ekstrakurikuler, dan kegiatan lain yang berakar pada budaya bangsa.</li>
-<li>Mengembangkan kompetensi akademik maupun non-akademik yang berkualitas mengarah pada standar nasional dan internasional dengan menerapkan dan mengembangkan kurikulum nasional yang diadaptasikan dengan kurikulum internasional.</li>
-<li>Mengembangkan proses pembelajaran yang bermutu, efektif dan dinamis dengan memanfaatkan sumber belajar yang inovatif dan kontektual.</li>
-<li>Mengembangkan sikap kompetitif yang sportif melalui berbagai bidang dan kesempatan dengan mengede-pankan semangat keunggulan dan semangat kebangsaan.</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FASILITAS SEKOLAH -->
-
-<section class="container my-5">
-
-<h2 class="section-title">Fasilitas Sekolah</h2>
-
-<div class="row g-4">
-
-<!-- 1 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?1" class="card-img-top">
-<div class="card-body text-center">
-<h5>Laboratorium Komputer</h5>
-<p>Fasilitas komputer untuk mendukung pembelajaran teknologi informasi.</p>
-</div>
-</div>
-</div>
-
-<!-- 2 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?2" class="card-img-top">
-<div class="card-body text-center">
-<h5>Laboratorium IPA</h5>
-<p>Laboratorium untuk praktikum fisika, kimia, dan biologi.</p>
-</div>
-</div>
-</div>
-
-<!-- 3 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?3" class="card-img-top">
-<div class="card-body text-center">
-<h5>Perpustakaan</h5>
-<p>Menyediakan berbagai buku pelajaran dan referensi.</p>
-</div>
-</div>
-</div>
-
-<!-- 4 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?4" class="card-img-top">
-<div class="card-body text-center">
-<h5>Ruang Multimedia</h5>
-<p>Ruang pembelajaran berbasis teknologi multimedia.</p>
-</div>
-</div>
-</div>
-
-<!-- 5 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?5" class="card-img-top">
-<div class="card-body text-center">
-<h5>Lapangan Olahraga</h5>
-<p>Lapangan olahraga untuk kegiatan siswa.</p>
-</div>
-</div>
-</div>
-
-<!-- 6 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?6" class="card-img-top">
-<div class="card-body text-center">
-<h5>Masjid Sekolah</h5>
-<p>Tempat ibadah bagi siswa dan guru di lingkungan sekolah.</p>
-</div>
-</div>
-</div>
-
-<!-- 7 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?7" class="card-img-top">
-<div class="card-body text-center">
-<h5>Kantin Sekolah</h5>
-<p>Menyediakan makanan sehat bagi siswa.</p>
-</div>
-</div>
-</div>
-
-<!-- 8 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?8" class="card-img-top">
-<div class="card-body text-center">
-<h5>UKS</h5>
-<p>Unit kesehatan sekolah untuk pelayanan siswa.</p>
-</div>
-</div>
-</div>
-
-<!-- 9 -->
-<div class="col-md-4">
-<div class="card info-card">
-<img src="https://picsum.photos/400/250?9" class="card-img-top">
-<div class="card-body text-center">
-<h5>Parkiran Sekolah</h5>
-<p>Area parkir yang luas untuk kendaraan siswa dan guru.</p>
-</div>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer class="bg-dark text-white text-center p-3">
-
-<p>© 2026 Portal SMA Negeri 1 Metro</p>
-
-</footer>
-
-<script src="js/bootstrap.bundle.min.js"></script>
+        <div class="row g-4">
+
+            <!-- VISI -->
+            <div class="col-md-6">
+
+                <div class="card info-card p-4">
+
+                    <h4>Visi</h4>
+
+                    <p>
+                        Disiplin, Unggul, Dilandasi Iman dan Taqwa
+                        (Digul Imtaq)
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MISI -->
+            <div class="col-md-6">
+
+                <div class="card info-card p-4">
+
+                    <h4>Misi</h4>
+
+                    <ul>
+
+                        <li>
+                            Mengembangkan kedisiplinan, kepemimpinan,
+                            dan kepribadian dalam kerangka ketaqwaan
+                            kepada Tuhan Yang Maha Esa.
+                        </li>
+
+                        <li>
+                            Mengembangkan kompetensi akademik maupun
+                            non-akademik yang berkualitas mengarah
+                            pada standar nasional dan internasional.
+                        </li>
+
+                        <li>
+                            Mengembangkan proses pembelajaran yang
+                            bermutu, efektif dan dinamis dengan
+                            memanfaatkan sumber belajar inovatif.
+                        </li>
+
+                        <li>
+                            Mengembangkan sikap kompetitif yang
+                            sportif melalui berbagai bidang.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FASILITAS SEKOLAH
+    ========================= -->
+
+    <section class="container my-5">
+
+        <h2 class="section-title">
+            Fasilitas Sekolah
+        </h2>
+
+        <div class="row g-4">
+
+            <!-- FASILITAS 1 -->
+            <div class="col-md-4">
+                <div class="card info-card">
+                    <img src="https://picsum.photos/400/250?1" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Laboratorium Komputer</h5>
+                        <p>Fasilitas komputer untuk pembelajaran teknologi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASILITAS 2 -->
+            <div class="col-md-4">
+                <div class="card info-card">
+                    <img src="https://picsum.photos/400/250?2" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Laboratorium IPA</h5>
+                        <p>Laboratorium praktikum fisika, kimia, dan biologi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FASILITAS 3 -->
+            <div class="col-md-4">
+                <div class="card info-card">
+                    <img src="https://picsum.photos/400/250?3" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Perpustakaan</h5>
+                        <p>Menyediakan berbagai buku pelajaran.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="bg-dark text-white text-center p-3">
+
+        <p>© 2026 Portal SMA Negeri 1 Metro</p>
+
+    </footer>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

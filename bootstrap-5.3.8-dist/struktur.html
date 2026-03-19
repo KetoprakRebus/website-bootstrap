@@ -1,356 +1,389 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Struktur Organisasi - SMA Negeri 1 Metro</title>
+    <title>Struktur Organisasi - SMA Negeri 1 Metro</title>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<style>
+    <style>
 
-body{
-background:#f5f7fb;
-font-family:Arial, Helvetica, sans-serif;
-}
+        /* ================= GLOBAL ================= */
 
-.header{
-background:linear-gradient(135deg,#0d6efd,#4e73df);
-color:white;
-padding:30px 0;
-text-align:center;
-}
+        body{
+            background:#f5f7fb;
+            font-family:Arial, Helvetica, sans-serif;
+        }
 
-.org-card{
-border:none;
-border-radius:15px;
-transition:0.3s;
-height:100%;
-}
+        /* ================= HEADER ================= */
 
-.org-card:hover{
-transform:translateY(-8px);
-}
+        .header{
+            background:linear-gradient(135deg,#0d6efd,#4e73df);
+            color:white;
+            padding:30px 0;
+            text-align:center;
+        }
 
-.org-img{
-width:110px;
-height:110px;
-border-radius:50%;
-object-fit:cover;
-margin:auto;
-margin-top:20px;
-border:4px solid white;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
+        /* ================= CARD ORGANISASI ================= */
 
-.section-title{
-margin-top:40px;
-margin-bottom:30px;
-font-weight:bold;
-text-align:center;
-}
+        .org-card{
+            border:none;
+            border-radius:15px;
+            transition:0.3s;
+            height:100%;
+        }
 
-</style>
+        .org-card:hover{
+            transform:translateY(-8px);
+        }
+
+        .org-img{
+            width:110px;
+            height:110px;
+            border-radius:50%;
+            object-fit:cover;
+            margin:auto;
+            margin-top:20px;
+            border:4px solid white;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .section-title{
+            margin-top:40px;
+            margin-bottom:30px;
+            font-weight:bold;
+            text-align:center;
+        }
+
+    </style>
 
 </head>
 
+
+
 <body>
 
-<!-- NAVBAR -->
+    <!-- ================= NAVBAR ================= -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-<div class="container">
+        <div class="container">
 
-<a class="navbar-brand fw-bold">SMA N 1 Metro</a>
+            <a class="navbar-brand fw-bold">
+                SMA N 1 Metro
+            </a>
 
-<ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto">
 
-<li class="nav-item">
-<a class="nav-link" href="index.html">Beranda</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Beranda
+                    </a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="profil.html">Profil</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profil.html">
+                        Profil
+                    </a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link active" href="struktur.html">Struktur</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="struktur.html">
+                        Struktur
+                    </a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="kritik.html">Kritik & Saran</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kritik.html">
+                        Kritik & Saran
+                    </a>
+                </li>
 
-<li class="nav-item">
-<a class="nav-link" href="login.html">Login</a>
-</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">
+                        Login
+                    </a>
+                </li>
 
-</ul>
+            </ul>
 
-</div>
+        </div>
 
-</nav>
+    </nav>
 
 
-<!-- HEADER -->
 
-<section class="header">
+    <!-- ================= HEADER ================= -->
 
-<h1>Struktur Organisasi</h1>
-<p>SMA Negeri 1 Metro</p>
+    <section class="header">
 
-</section>
+        <h1>Struktur Organisasi</h1>
+        <p>SMA Negeri 1 Metro</p>
 
+    </section>
 
-<div class="container">
 
-<!-- PIMPINAN -->
 
-<h3 class="section-title">Pimpinan Sekolah</h3>
+    <div class="container">
 
-<div class="row justify-content-center g-4">
+        <!-- ================= PIMPINAN ================= -->
 
-<div class="col-md-4">
+        <h3 class="section-title">Pimpinan Sekolah</h3>
 
-<div class="card shadow org-card text-center">
+        <div class="row justify-content-center g-4">
 
-<img src="https://picsum.photos/200" class="org-img">
+            <!-- Kepala Sekolah -->
+            <div class="col-md-4">
+                <div class="card shadow org-card text-center">
 
-<div class="card-body">
+                    <img src="https://picsum.photos/200" class="org-img">
 
-<h5>M. Kholid, M.Pd</h5>
-<p>Kepala Sekolah</p>
+                    <div class="card-body">
+                        <h5>M. Kholid, M.Pd</h5>
+                        <p>Kepala Sekolah</p>
+                    </div>
 
-</div>
+                </div>
+            </div>
 
-</div>
+            <!-- Komite Sekolah -->
+            <div class="col-md-4">
+                <div class="card shadow org-card text-center">
 
-</div>
+                    <img src="https://picsum.photos/201" class="org-img">
 
-<div class="col-md-4">
+                    <div class="card-body">
+                        <h5>Drs. Rusnadi, M.Si</h5>
+                        <p>Komite Sekolah</p>
+                    </div>
 
-<div class="card shadow org-card text-center">
+                </div>
+            </div>
 
-<img src="https://picsum.photos/201" class="org-img">
+            <!-- Tata Usaha -->
+            <div class="col-md-4">
+                <div class="card shadow org-card text-center">
 
-<div class="card-body">
+                    <img src="https://picsum.photos/202" class="org-img">
 
-<h5>Drs. Rusnadi, M.Si</h5>
-<p>Komite Sekolah</p>
+                    <div class="card-body">
+                        <h5>Supono</h5>
+                        <p>Kepala Tata Usaha</p>
+                    </div>
 
-</div>
+                </div>
+            </div>
 
-</div>
+        </div>
 
-</div>
 
-<div class="col-md-4">
 
-<div class="card shadow org-card text-center">
+        <!-- ================= WAKIL KEPALA ================= -->
 
-<img src="https://picsum.photos/202" class="org-img">
+        <h3 class="section-title">Wakil Kepala Sekolah</h3>
 
-<div class="card-body">
+        <div class="row g-4">
 
-<h5>Supono</h5>
-<p>Kepala Tata Usaha</p>
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-</div>
+                    <img src="https://picsum.photos/203" class="org-img">
 
-</div>
+                    <div class="card-body">
+                        <h6>Tri Nurul Fajarotun, S.Kom</h6>
+                        <p>Waka Kurikulum</p>
+                    </div>
 
-</div>
+                </div>
+            </div>
 
-</div>
 
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-<!-- WAKIL KEPALA -->
+                    <img src="https://picsum.photos/204" class="org-img">
 
-<h3 class="section-title">Wakil Kepala Sekolah</h3>
+                    <div class="card-body">
+                        <h6>Bahrudin Sarief, S.Pd</h6>
+                        <p>Waka Kesiswaan</p>
+                    </div>
 
-<div class="row g-4">
+                </div>
+            </div>
 
-<div class="col-md-3">
 
-<div class="card shadow org-card text-center">
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-<img src="https://picsum.photos/203" class="org-img">
+                    <img src="https://picsum.photos/205" class="org-img">
 
-<div class="card-body">
+                    <div class="card-body">
+                        <h6>Lakon Wahono, S.Pd</h6>
+                        <p>Waka Sarpras</p>
+                    </div>
 
-<h6>Tri Nurul Fajarotun, S.Kom</h6>
-<p>Waka Kurikulum</p>
+                </div>
+            </div>
 
-</div>
 
-</div>
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-</div>
+                    <img src="https://picsum.photos/206" class="org-img">
 
+                    <div class="card-body">
+                        <h6>Sri Wijayanti, S.Pd</h6>
+                        <p>Waka Humas</p>
+                    </div>
 
-<div class="col-md-3">
+                </div>
+            </div>
 
-<div class="card shadow org-card text-center">
+        </div>
 
-<img src="https://picsum.photos/204" class="org-img">
 
-<div class="card-body">
 
-<h6>Bahrudin Sarief, S.Pd</h6>
-<p>Waka Kesiswaan</p>
+        <!-- ================= ADMINISTRASI ================= -->
 
-</div>
+        <h3 class="section-title">Bidang Administrasi</h3>
 
-</div>
+        <div class="row g-4">
 
-</div>
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
+                    <img src="https://picsum.photos/207" class="org-img">
 
-<div class="col-md-3">
+                    <div class="card-body">
+                        <h6>Tina Maryanti, S.IP</h6>
+                        <p>Bid. Perpustakaan</p>
+                    </div>
 
-<div class="card shadow org-card text-center">
+                </div>
+            </div>
 
-<img src="https://picsum.photos/205" class="org-img">
 
-<div class="card-body">
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-<h6>Lakon Wahono, S.Pd</h6>
-<p>Waka Sarpras</p>
+                    <img src="https://picsum.photos/208" class="org-img">
 
-</div>
+                    <div class="card-body">
+                        <h6>Nanda Fitria Safitri</h6>
+                        <p>Pranata Laboran</p>
+                    </div>
 
-</div>
+                </div>
+            </div>
 
-</div>
 
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-<div class="col-md-3">
+                    <img src="https://picsum.photos/209" class="org-img">
 
-<div class="card shadow org-card text-center">
+                    <div class="card-body">
+                        <h6>Yohanah</h6>
+                        <p>Bid. Kesiswaan</p>
+                    </div>
 
-<img src="https://picsum.photos/206" class="org-img">
+                </div>
+            </div>
 
-<div class="card-body">
 
-<h6>Sri Wijayanti, S.Pd</h6>
-<p>Waka Humas</p>
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-</div>
+                    <img src="https://picsum.photos/210" class="org-img">
 
-</div>
+                    <div class="card-body">
+                        <h6>Andriyani</h6>
+                        <p>Bid. Surat Menyurat</p>
+                    </div>
 
-</div>
+                </div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- BIDANG ADMIN -->
 
-<h3 class="section-title">Bidang Administrasi</h3>
+        <!-- ================= GURU ================= -->
 
-<div class="row g-4">
+        <h3 class="section-title">Tenaga Pengajar</h3>
 
-<div class="col-md-3">
-<div class="card shadow org-card text-center">
-<img src="https://picsum.photos/207" class="org-img">
-<div class="card-body">
-<h6>Tina Maryanti, S.IP</h6>
-<p>Bid. Perpustakaan</p>
-</div>
-</div>
-</div>
+        <div class="row g-4">
 
-<div class="col-md-3">
-<div class="card shadow org-card text-center">
-<img src="https://picsum.photos/208" class="org-img">
-<div class="card-body">
-<h6>Nanda Fitria Safitri</h6>
-<p>Pranata Laboran</p>
-</div>
-</div>
-</div>
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-<div class="col-md-3">
-<div class="card shadow org-card text-center">
-<img src="https://picsum.photos/209" class="org-img">
-<div class="card-body">
-<h6>Yohanah</h6>
-<p>Bid. Kesiswaan</p>
-</div>
-</div>
-</div>
+                    <img src="https://picsum.photos/211" class="org-img">
 
-<div class="col-md-3">
-<div class="card shadow org-card text-center">
-<img src="https://picsum.photos/210" class="org-img">
-<div class="card-body">
-<h6>Andriyani</h6>
-<p>Bid. Surat Menyurat</p>
-</div>
-</div>
-</div>
+                    <div class="card-body">
+                        <h6>Guru Mata Pelajaran</h6>
+                    </div>
 
-</div>
+                </div>
+            </div>
 
 
-<!-- GURU -->
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-<h3 class="section-title">Tenaga Pengajar</h3>
+                    <img src="https://picsum.photos/212" class="org-img">
 
-<div class="row g-4">
+                    <div class="card-body">
+                        <h6>Guru Pembimbing</h6>
+                    </div>
 
-<div class="col-md-3">
-<div class="card shadow org-card text-center">
-<img src="https://picsum.photos/211" class="org-img">
-<div class="card-body">
-<h6>Guru Mata Pelajaran</h6>
-</div>
-</div>
-</div>
+                </div>
+            </div>
 
-<div class="col-md-3">
-<div class="card shadow org-card text-center">
-<img src="https://picsum.photos/212" class="org-img">
-<div class="card-body">
-<h6>Guru Pembimbing</h6>
-</div>
-</div>
-</div>
 
-<div class="col-md-3">
-<div class="card shadow org-card text-center">
-<img src="https://picsum.photos/213" class="org-img">
-<div class="card-body">
-<h6>Pembimbing Akademik</h6>
-</div>
-</div>
-</div>
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-<div class="col-md-3">
-<div class="card shadow org-card text-center">
-<img src="https://picsum.photos/214" class="org-img">
-<div class="card-body">
-<h6>Wali Kelas</h6>
-</div>
-</div>
-</div>
+                    <img src="https://picsum.photos/213" class="org-img">
 
-</div>
+                    <div class="card-body">
+                        <h6>Pembimbing Akademik</h6>
+                    </div>
 
-<br><br>
+                </div>
+            </div>
 
-</div>
 
+            <div class="col-md-3">
+                <div class="card shadow org-card text-center">
 
-<footer class="bg-dark text-white text-center p-3">
+                    <img src="https://picsum.photos/214" class="org-img">
 
-<p>© 2026 Portal SMA Negeri 1 Metro</p>
+                    <div class="card-body">
+                        <h6>Wali Kelas</h6>
+                    </div>
 
-</footer>
+                </div>
+            </div>
 
-<script src="js/bootstrap.bundle.min.js"></script>
+        </div>
+
+        <br><br>
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="bg-dark text-white text-center p-3">
+        <p>© 2026 Portal SMA Negeri 1 Metro</p>
+    </footer>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

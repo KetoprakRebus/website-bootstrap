@@ -1,194 +1,309 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kritik dan Saran - SMA Negeri 1 Metro</title>
+    <title>Kritik dan Saran - SMA Negeri 1 Metro</title>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<style>
+    <!-- STYLE -->
+    <style>
 
-body{
-background:#f4f6fb;
-font-family:Arial, Helvetica, sans-serif;
-}
+        /* =========================
+           GLOBAL
+        ========================= */
 
-/* HERO */
+        body {
+            background: #f4f6fb;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-.hero{
-background:linear-gradient(135deg,#0d6efd,#4e73df);
-color:white;
-padding:30px 20px;
-text-align:center;
-}
 
-/* CARD FORM */
+        /* =========================
+           HERO
+        ========================= */
 
-.form-card{
-border:none;
-border-radius:15px;
-box-shadow:0 6px 20px rgba(0,0,0,0.1);
-}
+        .hero {
+            background: linear-gradient(135deg,#0d6efd,#4e73df);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
 
-.form-control{
-border-radius:10px;
-}
 
-textarea{
-resize:none;
-}
+        /* =========================
+           FORM CARD
+        ========================= */
 
-</style>
+        .form-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+    </style>
 
 </head>
 
+
+
 <body>
 
-<!-- NAVBAR -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-<a class="navbar-brand fw-bold">SMA N 1 Metro</a>
+        <div class="container">
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
+            <a class="navbar-brand fw-bold">
+                SMA N 1 Metro
+            </a>
 
-<div class="collapse navbar-collapse" id="menu">
+            <button class="navbar-toggler"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu">
 
-<ul class="navbar-nav ms-auto">
+                <span class="navbar-toggler-icon"></span>
 
-<li class="nav-item">
-<a class="nav-link" href="index.html">Beranda</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="profil.html">Profil</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="struktur.html">Struktur</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link active" href="kritik.html">Kritik & Saran</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="login.html">Login</a>
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</nav>
+            </button>
 
 
-<!-- HERO -->
+            <div class="collapse navbar-collapse" id="menu">
 
-<section class="hero">
+                <ul class="navbar-nav ms-auto">
 
-<div class="container">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Beranda
+                        </a>
+                    </li>
 
-<h1>Kritik & Saran</h1>
-<p>Berikan masukan terbaik untuk kemajuan SMA Negeri 1 Metro</p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profil.html">
+                            Profil
+                        </a>
+                    </li>
 
-</div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="struktur.html">
+                            Struktur
+                        </a>
+                    </li>
 
-</section>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="kritik.html">
+                            Kritik & Saran
+                        </a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            Login
+                        </a>
+                    </li>
 
-<!-- FORM -->
+                </ul>
 
-<section class="container my-5">
+            </div>
 
-<div class="row justify-content-center">
+        </div>
 
-<div class="col-md-7">
-
-<div class="card form-card p-4">
-
-<h4 class="text-center mb-4">Form Kritik dan Saran</h4>
-
-<form id="formSaran">
-
-<div class="mb-3">
-<label class="form-label">Nama</label>
-<input type="text" class="form-control" required>
-</div>
-
-<div class="mb-3">
-<label class="form-label">Email</label>
-<input type="email" class="form-control" required>
-</div>
-
-<div class="mb-3">
-<label class="form-label">Kategori</label>
-<select class="form-control">
-<option>Pelayanan Sekolah</option>
-<option>Fasilitas</option>
-<option>Kegiatan Sekolah</option>
-<option>Lainnya</option>
-</select>
-</div>
-
-<div class="mb-3">
-<label class="form-label">Pesan</label>
-<textarea class="form-control" rows="4" required></textarea>
-</div>
-
-<div class="d-grid">
-<button class="btn btn-primary btn-lg">
-Kirim Kritik & Saran
-</button>
-</div>
-
-</form>
-
-<div id="alertSukses" class="alert alert-success mt-3 d-none">
-Terima kasih! Kritik dan saran Anda telah dikirim.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+    </nav>
 
 
-<!-- FOOTER -->
 
-<footer class="bg-dark text-white text-center p-3">
+    <!-- =========================
+         HERO
+    ========================= -->
 
-<p>© 2026 Portal SMA Negeri 1 Metro</p>
+    <section class="hero">
 
-</footer>
+        <div class="container">
+
+            <h1>Kritik & Saran</h1>
+
+            <p>
+                Berikan masukan terbaik untuk kemajuan
+                SMA Negeri 1 Metro
+            </p>
+
+        </div>
+
+    </section>
 
 
-<script src="js/bootstrap.bundle.min.js"></script>
 
-<script>
+    <!-- =========================
+         FORM KRITIK & SARAN
+    ========================= -->
 
-document.getElementById("formSaran").addEventListener("submit", function(e){
+    <section class="container my-5">
 
-e.preventDefault();
+        <div class="row justify-content-center">
 
-document.getElementById("alertSukses").classList.remove("d-none");
+            <div class="col-md-7">
 
-this.reset();
+                <div class="card form-card p-4">
 
-});
+                    <h4 class="text-center mb-4">
+                        Form Kritik dan Saran
+                    </h4>
 
-</script>
+
+                    <!-- FORM -->
+                    <form id="formSaran">
+
+
+                        <!-- NAMA -->
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Nama
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+
+                        <!-- KATEGORI -->
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Kategori
+                            </label>
+
+                            <select class="form-control">
+
+                                <option>Pelayanan Sekolah</option>
+                                <option>Fasilitas</option>
+                                <option>Kegiatan Sekolah</option>
+                                <option>Lainnya</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- PESAN -->
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Pesan
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                rows="4"
+                                required></textarea>
+
+                        </div>
+
+
+                        <!-- BUTTON -->
+                        <div class="d-grid">
+
+                            <button class="btn btn-primary btn-lg">
+                                Kirim Kritik & Saran
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <!-- ALERT -->
+                    <div id="alertSukses"
+                         class="alert alert-success mt-3 d-none">
+
+                        Terima kasih! Kritik dan saran Anda telah dikirim.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="bg-dark text-white text-center p-3">
+
+        <p>
+            © 2026 Portal SMA Negeri 1 Metro
+        </p>
+
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- =========================
+         SCRIPT FORM
+    ========================= -->
+
+    <script>
+
+        document
+            .getElementById("formSaran")
+            .addEventListener("submit", function(e){
+
+                e.preventDefault();
+
+                document
+                    .getElementById("alertSukses")
+                    .classList.remove("d-none");
+
+                this.reset();
+
+            });
+
+    </script>
 
 </body>
+
 </html>
